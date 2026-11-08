@@ -49,6 +49,7 @@ Antigravity and Kilo Code operate as a **co-pilot pair** on this repository. To 
    - `--nav-bg`, `--bestsellers-bg`, `--bg-main`
    - `--font-serif` (`Playfair Display`), `--font-display` (`Cinzel`), `--font-sans` (`Plus Jakarta Sans`)
 4. **Defensive DOM Access:** All JavaScript functions interacting with DOM elements MUST check for null (e.g. `const el = document.getElementById(...); if (el) { ... }`) because `app.js` runs across 5 separate pages (`index.html`, `shop.html`, `about.html`, `collections.html`, `contact.html`).
+5. **Continuous Git Synchronization:** After completing any major task, feature, bug fix, or style overhaul, commit all modified files with a clear, conventional commit message and push immediately to GitHub (`origin main`). Always ensure the working tree remains clean and tracked.
 
 ---
 
