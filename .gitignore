@@ -1,0 +1,26 @@
+# Dependencies
+node_modules/
+my-clerk-vite-app/node_modules/
+
+# Temporary directories and artifacts
+chrome_temp/
+edge_temp/
+.kilo/
+
+# Temporary screenshots & screen captures in root
+screenshot_*.png
+curr_*.png
+fbcc6be9-*.png
+
+# Temporary/scratch files
+test_*.js
+update_*.js
+check_*.js
+find_*.js
+apply_*.js
+print_*.js
+*.log
+
+# OS generated files
+.DS_Store
+Thumbs.db

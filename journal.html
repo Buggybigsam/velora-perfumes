@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Journal | VELORA PERFUMES</title>
+  <meta name="description" content="Notes on fragrance, wear tips for Ghana's weather, and the stories behind our scents." />
+  <meta name="theme-color" content="#08080a" />
+  <link rel="manifest" href="manifest.json" />
+
+  <!-- Google Fonts: matching Velora brand design -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+  <!-- Clerk SDK -->
+  <script async crossorigin="anonymous" data-clerk-publishable-key="pk_test_c3RpcnJpbmctc2N1bHBpbi04MjIyLmNsZXJrLmFjY291bnRzLmRldiQ" src="https://cdn.clerk.com/@clerk/clerk-js@5/dist/clerk.browser.js" type="text/javascript"></script>
+
+  <!-- Open Graph / WhatsApp / Facebook Preview Tags -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="VELORA PERFUMES" />
+  <meta property="og:title" content="The Velora Journal | Notes on Fragrance & Wear" />
+  <meta property="og:description" content="Practical guides, layering ideas, and honest advice on making your perfume last in Ghanas climate." />
+  <meta property="og:image" content="assets/journal-perfume-heat-accra.jpg" />
+  
+  <!-- Twitter Card Preview -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="The Velora Journal | Notes on Fragrance & Wear" />
+  <meta name="twitter:description" content="Practical guides, layering ideas, and honest advice on making your perfume last in Ghanas climate." />
+  <meta name="twitter:image" content="assets/journal-perfume-heat-accra.jpg" />
+
+  <!-- Favicon & Brand Icons -->
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
+  <link rel="apple-touch-icon" href="assets/favicon.png" />
+</head>
+<body>
+
+  <!-- ==========================================================================
+       TOP NAVIGATION BAR (MATCHES ALL OTHER VELORA PAGES)
+       ========================================================================== -->
+  <header class="velora-header">
+    <div class="velora-nav-container">
+      <a href="index.html" class="velora-brand" aria-label="Velora Perfumes">
+        <span class="velora-logo-title">VELORA</span>
+        <span class="velora-logo-sub">PERFUMES</span>
+      </a>
+
+      <nav aria-label="Main Menu">
+        <ul class="velora-nav-menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="collections.html">Collections</a></li>
+          <li><a href="journal.html" class="active">Journal</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="velora-header-actions">
+        <button class="velora-icon-link" onclick="openSearchModal()" title="Search" aria-label="Search">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <circle cx="11" cy="11" r="7.5"></circle>
+            <line x1="21" y1="21" x2="16.5" y2="16.5"></line>
+          </svg>
+        </button>
+
+        <button class="velora-icon-link" onclick="openWishlistDrawer()" title="Saved Fragrances" aria-label="Wishlist">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+          </svg>
+          <span class="cart-counter-badge" id="wishlistCountBadge">0</span>
+        </button>
+
+        <button class="velora-icon-link prive-vip-btn" onclick="openPriveDrawer()" title="Maison PrivÃ© VIP &amp; Orders" aria-label="Maison PrivÃ© VIP &amp; Orders">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+          <span class="prive-vip-indicator" id="priveVipDot" title="VIP PrivÃ© Active"></span>
+        </button>
+
+        <button class="velora-icon-link" onclick="openCartDrawer()" title="Shopping Bag" aria-label="Cart">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <path d="M16 10a4 4 0 0 1-8 0"></path>
+          </svg>
+          <span class="cart-counter-badge" id="cartCountBadge">0</span>
+        </button>
+
+        <button class="velora-mobile-toggle" onclick="toggleMobileNav()" aria-label="Open Navigation Menu">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-nav-overlay" id="mobileNavOverlay" onclick="closeMobileNav()"></div>
+  <aside class="mobile-nav-drawer" id="mobileNavDrawer">
+    <div class="mobile-nav-header">
+      <div class="mobile-nav-brand">VELORA <span>PERFUMES</span></div>
+      <button class="mobile-nav-close" onclick="closeMobileNav()">&times;</button>
+    </div>
+    <ul class="mobile-nav-links">
+      <li><a href="index.html" onclick="closeMobileNav()">Home</a></li>
+      <li><a href="shop.html" onclick="closeMobileNav()">Shop Fragrances</a></li>
+      <li><a href="about.html" onclick="closeMobileNav()">About Maison</a></li>
+      <li><a href="collections.html" onclick="closeMobileNav()">Collections</a></li>
+      <li><a href="journal.html" class="active" onclick="closeMobileNav()">Journal</a></li>
+      <li><a href="contact.html" onclick="closeMobileNav()">Contact</a></li>
+    </ul>
+  </aside>
+
+  <main>
+    <!-- Page Hero Banner (Exact match to Collections and About pages) -->
+    <section class="page-hero-banner">
+      <img loading="lazy" src="assets/shop-lavender-field.png" alt="Velora Journal" class="banner-bg-img" />
+      <div class="banner-gradient-overlay"></div>
+      <div class="container">
+        <div class="page-hero-content">
+          <span class="eyebrow no-before no-after" style="color:var(--gold-light);">THE VELORA JOURNAL</span>
+          <h1>Notes on Fragrance &amp; Wear</h1>
+          <p>Practical guides, layering ideas, and honest tips on making your perfume last in our climate.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Journal Feed Section (Clean, editorial warm-white background) -->
+    <section class="section-padding" style="background-color: var(--bg-main);">
+      <div class="container">
+        
+        <!-- Filter Tabs -->
+        <div class="journal-topic-tabs">
+          <button class="topic-tab active" onclick="filterJournal('all', this)">All Articles</button>
+          <button class="topic-tab" onclick="filterJournal('guides', this)">Wear &amp; Care</button>
+          <button class="topic-tab" onclick="filterJournal('layering', this)">Layering</button>
+          <button class="topic-tab" onclick="filterJournal('stories', this)">Scent Stories</button>
+        </div>
+
+        <!-- Featured Editorial Piece -->
+        <article class="featured-journal-post" onclick="openArticle('longevity')">
+          <div class="featured-post-img-box">
+            <img loading="lazy" src="assets/journal-perfume-heat-accra.jpg" alt="How to make your perfume last all day in Accras heat" />
+            <span class="post-pill-badge">Guide</span>
+          </div>
+          <div class="featured-post-text">
+            <div class="post-meta-line">
+              <span>May 18, 2026</span>
+              <span class="meta-dot">Â·</span>
+              <span>4 min read</span>
+            </div>
+            <h2>How to Make Your Perfume Last All Day in Accra's Heat</h2>
+            <p>
+              Warm weather and humidity make alcohol flash off skin faster than usual. Here are four practical things that actually help your fragrance stay with you from morning meetings to late dinner.
+            </p>
+            <div class="read-link-action">
+              <span>Read article</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </div>
+          </div>
+        </article>
+
+        <!-- Standard Articles Grid -->
+        <div class="journal-posts-grid">
+          <!-- Post 1 -->
+          <article class="journal-post-card" data-topic="layering" onclick="openArticle('layering')">
+            <div class="post-card-thumb">
+              <img loading="lazy" src="assets/journal-perfume-combinations.jpg" alt="Simple perfume combinations that never clash" />
+              <span class="post-pill-badge">Layering</span>
+            </div>
+            <div class="post-card-content">
+              <div class="post-meta-line">
+                <span>June 2, 2026</span>
+                <span class="meta-dot">Â·</span>
+                <span>3 min read</span>
+              </div>
+              <h3>Simple Perfume Combinations That Never Clash</h3>
+              <p>
+                Layering doesn't have to be complicated. Two straightforward combinations using woods, vanilla, and fresh notes that work reliably every time.
+              </p>
+              <div class="read-link-action">
+                <span>Read article</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </div>
+            </div>
+          </article>
+
+          <!-- Post 2 -->
+          <article class="journal-post-card" data-topic="guides" onclick="openArticle('buying')">
+            <div class="post-card-thumb">
+              <img loading="lazy" src="assets/journal-wrist-rubbing.jpg" alt="Why you should not rub your wrists together" />
+              <span class="post-pill-badge">Shopping Tip</span>
+            </div>
+            <div class="post-card-content">
+              <div class="post-meta-line">
+                <span>April 14, 2026</span>
+                <span class="meta-dot">Â·</span>
+                <span>3 min read</span>
+              </div>
+              <h3>Why You Shouldn't Rub Your Wrists Together</h3>
+              <p>
+                It is the most common habit when testing a new bottle, but the friction breaks down delicate top notes before you ever get to smell them properly.
+              </p>
+              <div class="read-link-action">
+                <span>Read article</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </div>
+            </div>
+          </article>
+
+          <!-- Post 3 -->
+          <article class="journal-post-card" data-topic="stories" onclick="openArticle('signature')">
+            <div class="post-card-thumb">
+              <img loading="lazy" src="assets/journal-signature-scent.jpg" alt="Finding your signature scent" />
+              <span class="post-pill-badge">Perspective</span>
+            </div>
+            <div class="post-card-content">
+              <div class="post-meta-line">
+                <span>March 29, 2026</span>
+                <span class="meta-dot">Â·</span>
+                <span>5 min read</span>
+              </div>
+              <h3>Finding One Scent You Never Get Tired Of</h3>
+              <p>
+                Most people own four or five bottles but only reach for one. Here is how to figure out what kind of base notes your skin naturally likes best.
+              </p>
+              <div class="read-link-action">
+                <span>Read article</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Practical Helper Callout (Clean & grounded) -->
+        <div class="journal-help-strip">
+          <div>
+            <h3>Not sure which bottle fits your day-to-day?</h3>
+            <p>Our quiz takes about 60 seconds and asks about the settings you wear fragrance in most often.</p>
+          </div>
+          <a href="index.html#scent-finder" class="btn btn-primary">Try the Scent Finder</a>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Clean Article Reader Modal (Light, readable, human editorial layout) -->
+  <div class="modal-overlay" id="articleModal" role="dialog" aria-modal="true">
+    <div class="modal-container human-reader-modal">
+      <button class="modal-close-btn" onclick="closeArticle()">&times;</button>
+      <div id="articleContentContainer"></div>
+    </div>
+  </div>
+
+  <!-- Standard Velora Footer (Exact match to index, about, and shop) -->
+  <footer class="velora-site-footer">
+    <div class="footer-container">
+      <div class="footer-top-grid">
+        <div class="footer-col footer-brand-col">
+          <a href="index.html" class="velora-brand">
+            <span class="velora-logo-title">VELORA</span>
+            <span class="velora-logo-sub">PERFUMES</span>
+          </a>
+          <p class="footer-bio">
+            Haute perfumerie crafted with rare botanical essences and an enduring devotion to elegance.
+          </p>
+          <div class="footer-social-row">
+            <a href="https://instagram.com" target="_blank" rel="noopener" class="footer-social-link" title="Instagram" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+            </a>
+            <a href="https://wa.me/233245550192" target="_blank" rel="noopener" class="footer-social-link" title="WhatsApp" aria-label="WhatsApp">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Collections</h4>
+          <ul>
+            <li><a href="shop.html">All Fragrances</a></li>
+            <li><a href="shop.html#bestsellers">Best Sellers</a></li>
+            <li><a href="collections.html">For Her</a></li>
+            <li><a href="collections.html">For Him</a></li>
+            <li><a href="collections.html">Unisex Extrait</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>The Maison</h4>
+          <ul>
+            <li><a href="about.html">Our Story</a></li>
+            <li><a href="about.html#craft">Artisanal Craft</a></li>
+            <li><a href="about.html#values">Sustainability</a></li>
+            <li><a href="contact.html">Press &amp; Inquiries</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Care &amp; Delivery</h4>
+          <ul>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="contact.html">WhatsApp Support</a></li>
+            <li><a href="contact.html#faq">Shipping &amp; Delivery</a></li>
+            <li><a href="contact.html">Track Your Order</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom-bar">
+        <div>&copy; 2026 Velora Perfumes. All rights reserved.</div>
+        <div class="footer-luxury-tag">
+          Handcrafted in Ghana Â· Delivery Nationwide
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Shared Cart Drawer & Modals -->
+  <div class="cart-drawer-overlay" id="cartDrawerOverlay" onclick="closeCartDrawer()"></div>
+  <aside class="cart-drawer" id="cartDrawer"></aside>
+
+  <div class="modal-overlay" id="checkoutModal"></div>
+  <div class="modal-overlay" id="confirmationModal"></div>
+  <div class="modal-overlay" id="searchModal"></div>
+  <div class="modal-overlay" id="wishlistDrawer"></div>
+  <div class="modal-overlay" id="priveDrawer"></div>
+
+  <script src="app.js"></script>
+  <script src="clerk-auth.js"></script>
+  <script>
+    const JOURNAL_ARTICLES = {
+      longevity: {
+        title: "How to Make Your Perfume Last All Day in Accra's Heat",
+        date: "May 18, 2026",
+        readTime: "4 min read",
+        category: "Wear & Care Guide",
+        content: `
+          <p class="reader-lead">
+            Anyone who wears fragrance in Ghana knows the frustration: you spray three or four times before leaving home, and by lunchtime it feels like it has completely vanished.
+          </p>
+          <p>
+            The reason isn't necessarily poor quality perfume. Our average temperature and midday sun cause the alcohol carrier to evaporate much faster than it would in a cold climate, taking light top notes like bergamot, lemon, and pear along with it.
+          </p>
+          <h3>1. Moisturize first â€” fragrance loves hydrated skin</h3>
+          <p>
+            Dry skin absorbs the oils in perfume almost immediately, which cuts your projection in half. Applying an unscented body lotion or a tiny bit of shea butter to your pulse points (wrists, sides of the neck, inner elbows) before spraying creates a natural surface barrier that keeps the oils on your skin longer.
+          </p>
+          <h3>2. Don't skip your collar or fabric</h3>
+          <p>
+            Skin warms up and speeds up evaporation; natural fabrics like cotton and linen do not. Giving a light spray to your collar or jacket lining will keep the heart notes alive well past 6 PM.
+          </p>
+          <h3>3. Look at concentration, not just brand name</h3>
+          <p>
+            Eau de Toilettes are mostly alcohol and water with only 5% to 10% oil. For our climate, look for <strong>Eau de Parfum</strong> or <strong>Extrait de Parfum</strong> (20% to 30% oil concentration). They sit heavier, take longer to dissipate, and smell richer as the day goes on.
+          </p>
+          <h3>4. Store your bottle away from direct bathroom sunlight</h3>
+          <p>
+            Heat and bathroom humidity break down perfume compounds over months. Keep your bottles in a bedroom drawer, wardrobe, or dresser out of direct afternoon light.
+          </p>
+        `
+      },
+      layering: {
+        title: "Simple Perfume Combinations That Never Clash",
+        date: "June 2, 2026",
+        readTime: "3 min read",
+        category: "Layering",
+        content: `
+          <p class="reader-lead">
+            Layering doesn't mean spraying three heavy perfumes on top of each other. The easiest way to think about it is pairing a warm base with a fresh top.
+          </p>
+          <p>
+            When two perfumes fight for attention, it's usually because both are competing in the same register — like two heavy ouds or two loud sweet florals. Here are two pairings that balance each other naturally:
+          </p>
+          <h3>Combo 1: Warm Amber + Clean Citrus</h3>
+          <p>
+            If you own a rich vanilla or amber bottle (like <em>Velora Amber Bliss</em>), spray that on your wrists and chest first. Give it a minute to settle, then add one spray of a fresh citrus or woody scent on your neck. The citrus gives a bright greeting when you say hello, while the amber provides warmth as you move through your day.
+          </p>
+          <h3>Combo 2: Smoky Woods + Dewy Rose</h3>
+          <p>
+            Oud and dark woods can sometimes feel too formal for everyday wear. Softening them with a fresh floral like peony or rose balances out the dry smoke and makes the scent approachable in an office setting.
+          </p>
+          <h3>The golden rule</h3>
+          <p>
+            Always put the heavier, darker bottle on first, and keep total sprays to three or four. You want people standing next to you to notice, not the entire room.
+          </p>
+        `
+      },
+      buying: {
+        title: "Why You Shouldn't Rub Your Wrists Together",
+        date: "April 14, 2026",
+        readTime: "3 min read",
+        category: "Shopping Tip",
+        content: `
+          <p class="reader-lead">
+            We have all done it without thinking: spray once on the left wrist, press the right wrist against it, and rub. It feels natural, but it actually works against you.
+          </p>
+          <h3>What actually happens when you rub</h3>
+          <p>
+            Friction generates sudden heat on the surface of your skin. That brief heat spike breaks up the lighter, volatile top notes — the crisp citrus, delicate flowers, and fruits — causing them to burn off within seconds rather than developing naturally over 15 to 20 minutes.
+          </p>
+          <h3>What to do instead</h3>
+          <p>
+            Spray your pulse points and let them air dry naturally for 30 seconds. If you want the scent on both wrists, simply spray each wrist once.
+          </p>
+          <p>
+            When testing a new perfume in a boutique, spray it on your arm, walk around for twenty minutes, and smell it outside the shop air. What you smell after 20 minutes is the true heart of the perfume — not just the first spray blast.
+          </p>
+        `
+      },
+      signature: {
+        title: "Finding One Scent You Never Get Tired Of",
+        date: "March 29, 2026",
+        readTime: "5 min read",
+        category: "Perspective",
+        content: `
+          <p class="reader-lead">
+            Most people who love fragrance go through a phase of buying bottle after bottle, only to find that three months later, four of them just sit on the shelf gathering dust.
+          </p>
+          <p>
+            A true signature scent isn't the loudest bottle in the room. It's the one that feels completely comfortable on your skin whether you are wearing a t-shirt on Saturday or dressing up for a wedding.
+          </p>
+          <h3>Pay attention to dry-down notes, not the opening</h3>
+          <p>
+            The first spray of any perfume is designed to hook you in the first 60 seconds. But you spend 90% of your day living with the base notes: cedarwood, amber, musk, sandalwood, or patchouli. If you dislike sweet dry-downs, avoid gourmand vanillas even if the opening citrus smelled great.
+          </p>
+          <h3>Think about the spaces you spend time in</h3>
+          <p>
+            If you work in air-conditioned offices all day, you can wear deeper, spicier scents comfortably. If you are frequently outdoors or driving between meetings, fresh aromatics and clean woods will keep you feeling refreshed rather than weighed down.
+          </p>
+          <p>
+            Take your time choosing. A great bottle should feel like your own handwriting — unmistakably yours.
+          </p>
+        `
+      }
+    };
+
+    function filterJournal(topic, btn) {
+      document.querySelectorAll('.topic-tab').forEach(b => b.classList.remove('active'));
+      if (btn) btn.classList.add('active');
+
+      const cards = document.querySelectorAll('.journal-post-card');
+      cards.forEach(card => {
+        if (topic === 'all' || card.dataset.topic === topic) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    function openArticle(key) {
+      const art = JOURNAL_ARTICLES[key];
+      if (!art) return;
+
+      const container = document.getElementById('articleContentContainer');
+      if (container) {
+        container.innerHTML = `
+          <div class="human-article-header">
+            <div class="human-meta-top">
+              <span class="human-category-tag">${art.category}</span>
+              <span class="meta-dot">·</span>
+              <span>${art.date}</span>
+              <span class="meta-dot">·</span>
+              <span>${art.readTime}</span>
+            </div>
+            <h1>${art.title}</h1>
+          </div>
+          <div class="human-article-body">
+            ${art.content}
+          </div>
+          <div class="human-article-footer">
+            <button class="btn btn-outline" style="border-color:#ccc; color:#333;" onclick="closeArticle()">Close</button>
+            <a href="shop.html" class="btn btn-primary">Browse Perfumes</a>
+          </div>
+        `;
+      }
+
+      const modal = document.getElementById('articleModal');
+      if (modal) modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeArticle() {
+      const modal = document.getElementById('articleModal');
+      if (modal) modal.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+  </script>
+</body>
+</html>

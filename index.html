@@ -1,0 +1,1174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VELORA PERFUMES | Find Your Signature Scent</title>
+  <meta name="description" content="Luxury fragrances for every mood, moment and version of you. Discover timeless bestsellers by Velora Perfumes." />
+  <meta name="theme-color" content="#06070a" />
+
+  <!-- Google Fonts: Playfair Display & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <link rel="manifest" href="manifest.json" />
+  <link rel="stylesheet" href="styles.css" />
+  <!-- Open Graph / WhatsApp / Facebook Preview Tags -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="VELORA PERFUMES" />
+  <meta property="og:title" content="VELORA PERFUMES | Haute Parfumerie Boutique Accra" />
+  <meta property="og:description" content="Bespoke artisanal perfumes formulated in Grasse and delivered in Accra, Ghana. Explore Extrait de Parfum strength fragrances with cash and MoMo on delivery." />
+  <meta property="og:image" content="assets/hero-model.jpg" />
+  
+  <!-- Twitter Card Preview -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="VELORA PERFUMES | Haute Parfumerie Boutique Accra" />
+  <meta name="twitter:description" content="Bespoke artisanal perfumes formulated in Grasse and delivered in Accra, Ghana. Explore Extrait de Parfum strength fragrances with cash and MoMo on delivery." />
+  <meta name="twitter:image" content="assets/hero-model.jpg" />
+
+  <!-- Favicon & Brand Icons -->
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
+  <link rel="apple-touch-icon" href="assets/favicon.png" />
+
+  <!-- Structured Data: Local Business / Boutique -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BeautySalon",
+    "name": "VELORA PERFUMES",
+    "image": "https://veloraperfumes.com/assets/hero-model.jpg",
+    "description": "Haute Parfumerie Boutique in Accra, Ghana offering Extrait de Parfum strength artisanal fragrances formulated in Grasse.",
+    "priceRange": "GH₵ 980 - GH₵ 1,850",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "East Legon",
+      "addressLocality": "Accra",
+      "addressRegion": "Greater Accra",
+      "addressCountry": "GH"
+    },
+    "telephone": "+233245550192",
+    "url": "https://veloraperfumes.com/",
+    "paymentAccepted": "Cash on Delivery, Mobile Money (MoMo)",
+    "currenciesAccepted": "GHS"
+  }
+  </script>
+</head>
+<body>
+
+  <!-- ==========================================================================
+       TOP NAVIGATION BAR (EXACTLY AS IN VELORA.PNG)
+       ========================================================================== -->
+  <header class="velora-header">
+    <div class="velora-nav-container">
+      <!-- Logo: VELORA PERFUMES -->
+      <a href="index.html" class="velora-brand" aria-label="Velora Perfumes">
+        <span class="velora-logo-title">VELORA</span>
+        <span class="velora-logo-sub">PERFUMES</span>
+      </a>
+
+      <!-- Center Links: Home | Shop | About | Collections | Contact -->
+      <nav aria-label="Main Menu">
+        <ul class="velora-nav-menu">
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="collections.html">Collections</a></li>
+          <li><a href="journal.html">Journal</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Right Action Icons: Currency, Search, Wishlist, Maison Privé VIP, Cart, Mobile Toggle -->
+      <div class="velora-header-actions">
+
+        <!-- Search Icon -->
+        <button class="velora-icon-link" onclick="openSearchModal()" title="Search" aria-label="Search">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <circle cx="11" cy="11" r="7.5"></circle>
+            <line x1="21" y1="21" x2="16.5" y2="16.5"></line>
+          </svg>
+        </button>
+
+        <!-- Wishlist Icon -->
+        <button class="velora-icon-link" onclick="openWishlistDrawer()" title="Saved Fragrances" aria-label="Wishlist">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+          </svg>
+          <span class="cart-counter-badge" id="wishlistCountBadge">0</span>
+        </button>
+
+        <!-- Maison Privé VIP Icon -->
+        <button class="velora-icon-link prive-vip-btn" onclick="openPriveDrawer()" title="Maison Privé VIP & Orders" aria-label="Maison Privé VIP & Orders">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+          <span class="prive-vip-indicator" id="priveVipDot" title="VIP Privé Active"></span>
+        </button>
+
+        <!-- Shopping Bag Icon with 0 Badge -->
+        <button class="velora-icon-link" onclick="openCartDrawer()" title="Shopping Bag" aria-label="Cart">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <path d="M16 10a4 4 0 0 1-8 0"></path>
+          </svg>
+          <span class="cart-counter-badge" id="cartCountBadge">0</span>
+        </button>
+
+        <!-- Mobile Hamburger Toggle -->
+        <button class="velora-mobile-toggle" onclick="toggleMobileNav()" aria-label="Open Navigation Menu">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ==========================================================================
+         HERO SECTION (EXACTLY AS IN VELORA.PNG)
+         ========================================================================== -->
+    <section class="velora-hero" aria-label="Hero Banner">
+      <div class="velora-hero-inner">
+        <div class="hero-text-box">
+          <div class="hero-subtitle">MORE THAN A SCENT</div>
+          <h1 class="hero-headline">
+            Find Your<br />
+            Signature Scent
+          </h1>
+          <p class="hero-desc">
+            Luxury fragrances for every mood, moment<br />
+            and version of you.
+          </p>
+          <div style="display:flex; gap:12px; align-items:center; flex-wrap:wrap;">
+            <a href="shop.html" class="btn-shop-now">
+              SHOP NOW →
+            </a>
+            <button class="btn-shop-now" style="background:rgba(255,255,255,0.06); border:1px solid var(--gold-accent); color:var(--gold-light); cursor:pointer;" onclick="openScentQuiz()">
+              FIND MY SCENT
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         FEATURE BAR - 4 PILLARS (EXACTLY AS IN VELORA.PNG)
+         ========================================================================== -->
+    <section class="velora-feature-bar" aria-label="Brand Guarantees">
+      <div class="feature-bar-container">
+        <div class="feature-bar-grid">
+          <!-- Pillar 1: Free Shipping -->
+          <div class="feature-col">
+            <div class="feature-icon-wrapper">
+              <img loading="lazy" src="assets/icon_shipping_clean.png" alt="Free Shipping" class="feature-icon-img" />
+            </div>
+            <div class="feature-text">
+              <h4>Free Shipping</h4>
+              <p>On orders over GH₵ 1,500</p>
+            </div>
+          </div>
+
+          <!-- Pillar 2: 100% Authentic -->
+          <div class="feature-col">
+            <div class="feature-icon-wrapper">
+              <img loading="lazy" src="assets/icon_authentic_clean.png" alt="100% Authentic" class="feature-icon-img" />
+            </div>
+            <div class="feature-text">
+              <h4>100% Authentic</h4>
+              <p>Premium quality guaranteed</p>
+            </div>
+          </div>
+
+          <!-- Pillar 3: Long Lasting Scents -->
+          <div class="feature-col">
+            <div class="feature-icon-wrapper">
+              <img loading="lazy" src="assets/icon_scent_clean.png" alt="Long Lasting Scents" class="feature-icon-img" />
+            </div>
+            <div class="feature-text">
+              <h4>Long Lasting Scents</h4>
+              <p>Fragrance that stays</p>
+            </div>
+          </div>
+
+          <!-- Pillar 4: Dedicated Support -->
+          <div class="feature-col">
+            <div class="feature-icon-wrapper">
+              <img loading="lazy" src="assets/icon_support_clean.png" alt="Dedicated Support" class="feature-icon-img" />
+            </div>
+            <div class="feature-text">
+              <h4>Dedicated Support</h4>
+              <p>We're here to help</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         BEST SELLERS: TIMELESS FRAGRANCES (EXACTLY AS IN VELORA.PNG)
+         ========================================================================== -->
+    <section class="velora-bestsellers-section" aria-label="Best Sellers">
+      <div class="bestsellers-container">
+        <!-- Section Header -->
+        <div class="bestsellers-heading">
+          <div class="bestsellers-eyebrow">BEST SELLERS</div>
+          <h2 class="bestsellers-title">Timeless Fragrances</h2>
+          <p class="bestsellers-sub">
+            Discover our most loved scents, crafted for unforgettable moments.
+          </p>
+        </div>
+
+        <!-- 5 Showcase Cards: Amber Bliss, Blush Petals, Midnight Oud, Ocean Breeze, Vanilla Dream -->
+        <div class="bestsellers-five-grid">
+          <!-- Card 1: Amber Bliss -->
+          <div class="perfume-showcase-card" onclick="openProductModal('velora-amber-bliss')">
+            <div class="perfume-card-img-wrap">
+              <img src="assets/products/amber-bliss.jpg" alt="Amber Bliss Eau de Parfum" loading="lazy" />
+            </div>
+            <h3 class="perfume-card-title">Amber Bliss</h3>
+            <div class="perfume-card-price">GH₵ 1,250</div>
+          </div>
+
+          <!-- Card 2: Blush Petals -->
+          <div class="perfume-showcase-card" onclick="openProductModal('velora-blush-petals')">
+            <div class="perfume-card-img-wrap">
+              <img src="assets/products/blush-petals.jpg" alt="Blush Petals Eau de Parfum" loading="lazy" />
+            </div>
+            <h3 class="perfume-card-title">Blush Petals</h3>
+            <div class="perfume-card-price">GH₵ 1,150</div>
+          </div>
+
+          <!-- Card 3: Midnight Oud -->
+          <div class="perfume-showcase-card" onclick="openProductModal('velora-midnight-oud')">
+            <div class="perfume-card-img-wrap">
+              <img src="assets/products/midnight-oud.jpg" alt="Midnight Oud Eau de Parfum" loading="lazy" />
+            </div>
+            <h3 class="perfume-card-title">Midnight Oud</h3>
+            <div class="perfume-card-price">GH₵ 1,450</div>
+          </div>
+
+          <!-- Card 4: Ocean Breeze -->
+          <div class="perfume-showcase-card" onclick="openProductModal('velora-ocean-breeze')">
+            <div class="perfume-card-img-wrap">
+              <img src="assets/products/ocean-breeze.jpg" alt="Ocean Breeze Eau de Parfum" loading="lazy" />
+            </div>
+            <h3 class="perfume-card-title">Ocean Breeze</h3>
+            <div class="perfume-card-price">GH₵ 1,180</div>
+          </div>
+
+          <!-- Card 5: Vanilla Dream -->
+          <div class="perfume-showcase-card" onclick="openProductModal('velora-vanilla-dream')">
+            <div class="perfume-card-img-wrap">
+              <img src="assets/products/vanilla-dream.jpg" alt="Vanilla Dream Eau de Parfum" loading="lazy" />
+            </div>
+            <h3 class="perfume-card-title">Vanilla Dream</h3>
+            <div class="perfume-card-price">GH₵ 1,220</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         BRAND STORY - SHORT DESCRIPTION ABOUT THE BRAND
+         ========================================================================== -->
+    <section class="velora-brand-story" id="brand-story" aria-label="About Velora Perfumes">
+      <div class="brand-story-container">
+        <div class="brand-story-grid">
+          <!-- Visual: Atelier Craftsmanship -->
+          <div class="brand-story-visual">
+            <div class="brand-img-wrap">
+              <img src="assets/brand-story-atelier.jpg" alt="Master Perfumer in Velora Atelier" loading="lazy" />
+              <div class="brand-floating-badge">
+                <span class="badge-year">EST. 2021</span>
+                <span class="badge-title">HAUTE PARFUMERIE</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Narrative Content -->
+          <div class="brand-story-content">
+            <div class="section-eyebrow">THE ESSENCE OF VELORA</div>
+            <h2 class="section-headline">Crafted for Distinction, Bottled with Soul</h2>
+            <p class="brand-lead-text">
+              At Velora, we believe fragrance is not merely an accessory, but an intimate signature — an invisible aura that lingers long after you have left the room.
+            </p>
+            <p class="brand-body-text">
+              Rooted in the heritage of French haute parfumerie and elevated by rare botanical harvests — from Grasse to Madagascar — every Velora flacon is aged in small oak casks to achieve unprecedented depth, balance, and sillage.
+            </p>
+
+            <!-- Brand Distinction Metrics -->
+            <div class="brand-metrics-row">
+              <div class="metric-card">
+                <span class="metric-val">38%</span>
+                <span class="metric-lbl">Extrait Concentration</span>
+              </div>
+              <div class="metric-card">
+                <span class="metric-val">24H+</span>
+                <span class="metric-lbl">Enduring Sillage</span>
+              </div>
+              <div class="metric-card">
+                <span class="metric-val">100%</span>
+                <span class="metric-lbl">Cruelty-Free & Ethical</span>
+              </div>
+            </div>
+
+            <a href="about.html" class="btn-brand-explore">
+              EXPLORE OUR CRAFT →
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         LOWER HOMEPAGE SHOWCASE WRAPPER (THE VELORA STANDARD & TESTIMONIALS)
+         ========================================================================== -->
+    <div class="velora-lower-home-wrapper">
+    <!-- ==========================================================================
+         WHY CHOOSE US - THE VELORA STANDARD
+         ========================================================================== -->
+    <section class="velora-why-us" id="why-choose-us" aria-label="Why Choose Velora">
+      <div class="why-us-container">
+        <div class="why-us-header">
+          <div class="section-eyebrow">THE VELORA STANDARD</div>
+          <h2 class="section-headline">Why Discerning Connoisseurs Choose Velora</h2>
+          <p class="section-subtext">
+            Every drop embodies uncompromising quality, artisanal dedication, and an obsession with perfection.
+          </p>
+        </div>
+
+        <div class="why-us-cards-grid">
+          <!-- Pillar 1: Artisanal Mastery -->
+          <div class="why-card">
+            <div class="why-icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+              </svg>
+            </div>
+            <h3>Artisanal Master Perfumers</h3>
+            <p>
+              Formulated exclusively in Grasse by world-renowned noses blending centuries of botanical mastery with modern olfactory alchemy.
+            </p>
+          </div>
+
+          <!-- Pillar 2: Extrait Strength -->
+          <div class="why-card">
+            <div class="why-icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+                <path d="M12 2v6m0 0a5 5 0 0 0-5 5v7a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-7a5 5 0 0 0-5-5z"></path>
+                <circle cx="12" cy="15" r="2"></circle>
+              </svg>
+            </div>
+            <h3>Extrait de Parfum Strength</h3>
+            <p>
+              Crafted with up to 38% pure perfume oils, significantly higher than typical retail scents, for an opulent, all-day presence.
+            </p>
+          </div>
+
+          <!-- Pillar 3: Ethically Sourced Botanicals -->
+          <div class="why-card">
+            <div class="why-icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+                <path d="M12 22V12m0 0a7 7 0 0 1 7-7c0 4-3 7-7 7zm0 0a7 7 0 0 0-7-7c0 4 3 7 7 7z"></path>
+              </svg>
+            </div>
+            <h3>Rare & Ethical Botanicals</h3>
+            <p>
+              From hand-picked Damask roses to sustainable Cambodian agarwood oud, our raw essences are harvested with ecological respect.
+            </p>
+          </div>
+
+          <!-- Pillar 4: VIP Concierge Presentation -->
+          <div class="why-card">
+            <div class="why-icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+                <rect x="3" y="8" width="18" height="13" rx="2"></rect>
+                <path d="M12 8V3m-4 5V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v3"></path>
+                <line x1="12" y1="12" x2="12" y2="17"></line>
+              </svg>
+            </div>
+            <h3>White-Glove VIP Presentation</h3>
+            <p>
+              Every order arrives in a weighted magnetic velvet keepsake box accompanied by complimentary discovery vials for your ritual.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         TESTIMONIALS - COMMENDATIONS FROM CONNOISSEURS
+         ========================================================================== -->
+    <section class="velora-testimonials" id="testimonials" aria-label="Customer Reviews">
+      <div class="testimonials-container">
+        <div class="testimonials-header">
+          <div class="section-eyebrow">COMMENDATIONS</div>
+          <h2 class="section-headline">Loved by Fragrance Enthusiasts</h2>
+          <p class="section-subtext">
+            Authentic impressions from collectors who made Velora their unforgettable signature.
+          </p>
+        </div>
+
+        <div class="testimonials-grid">
+          <!-- Review 1 -->
+          <div class="testi-card">
+            <div class="testi-top">
+              <div class="testi-stars"></div>
+              <span class="testi-badge">Verified Buyer</span>
+            </div>
+            <p class="testi-quote">
+              “Midnight Oud is hands down the most intoxicating fragrance I have ever owned. I get stopped in restaurants and hotel lobbies asking what I’m wearing. The longevity is incredible, still detectable the next morning.”
+            </p>
+            <div class="testi-footer">
+              <div class="testi-avatar">EV</div>
+              <div class="testi-author-info">
+                <h4>Evelyn Vance</h4>
+                <span class="testi-scent-tag">Midnight Oud (100ml)</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Review 2 -->
+          <div class="testi-card">
+            <div class="testi-top">
+              <div class="testi-stars"></div>
+              <span class="testi-badge">Verified Buyer</span>
+            </div>
+            <p class="testi-quote">
+              “Amber Bliss feels like pure liquid gold on skin. It is warm, comforting, yet effortlessly regal. It has quickly become my indispensable signature for every evening occasion.”
+            </p>
+            <div class="testi-footer">
+              <div class="testi-avatar">MS</div>
+              <div class="testi-author-info">
+                <h4>Marcus Sterling</h4>
+                <span class="testi-scent-tag">Amber Bliss (100ml)</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Review 3 -->
+          <div class="testi-card">
+            <div class="testi-top">
+              <div class="testi-stars"></div>
+              <span class="testi-badge">Verified Buyer</span>
+            </div>
+            <p class="testi-quote">
+              “Blush Petals is the epitome of Parisian springtime elegance. The peony and rose notes smell so crisp and alive, never cloying. Unboxing the velvet magnetic box was pure joy.”
+            </p>
+            <div class="testi-footer">
+              <div class="testi-avatar">SD</div>
+              <div class="testi-author-info">
+                <h4>Sophie Delacroix</h4>
+                <span class="testi-scent-tag">Blush Petals (100ml)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Rating Summary Bar -->
+        <div class="testimonials-score-bar">
+          <span class="stars-gold"></span>
+          <strong>4.9 / 5.0 Rating</strong>
+          <span class="score-divider">•</span>
+          <span>Based on 1,480+ authentic connoisseur reviews</span>
+        </div>
+      </div>
+    </section>
+    </div><!-- /.velora-lower-home-wrapper -->
+  </main>
+
+  <!-- ==========================================================================
+       CLEAN LUXURY FOOTER
+       ========================================================================== -->
+  <footer class="velora-site-footer">
+    <div class="footer-container">
+      <div class="footer-top-grid">
+        <div class="footer-col footer-brand-col">
+          <a href="index.html" class="velora-brand">
+            <span class="velora-logo-title">VELORA</span>
+            <span class="velora-logo-sub">PERFUMES</span>
+          </a>
+          <p class="footer-bio">
+            Haute perfumerie crafted with rare botanical essences and an enduring devotion to elegance.
+          </p>
+          <div class="footer-social-row">
+            <a href="https://instagram.com" target="_blank" rel="noopener" class="footer-social-link" title="Instagram" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+            </a>
+            <a href="https://facebook.com" target="_blank" rel="noopener" class="footer-social-link" title="Facebook" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+            </a>
+            <a href="https://tiktok.com" target="_blank" rel="noopener" class="footer-social-link" title="TikTok" aria-label="TikTok">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"></path></svg>
+            </a>
+            <a href="https://pinterest.com" target="_blank" rel="noopener" class="footer-social-link" title="Pinterest" aria-label="Pinterest">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"></circle><path d="M8 20l4-9"></path><path d="M10.5 14.5c2 0 4.5-1 4.5-3.5S13 7.5 10.5 8.5"></path></svg>
+            </a>
+            <a href="https://wa.me/233245550192" target="_blank" rel="noopener" class="footer-social-link" title="WhatsApp Concierge" aria-label="WhatsApp">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Collections</h4>
+          <ul>
+            <li><a href="shop.html">All Fragrances</a></li>
+            <li><a href="shop.html#bestsellers">Best Sellers</a></li>
+            <li><a href="collections.html">For Her</a></li>
+            <li><a href="collections.html">For Him</a></li>
+            <li><a href="collections.html">Unisex Extrait</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>The Maison</h4>
+          <ul>
+            <li><a href="about.html">Our Story</a></li>
+            <li><a href="about.html#craft">Artisanal Craft</a></li>
+            <li><a href="about.html#values">Sustainability</a></li>
+            <li><a href="contact.html">Press & Inquiries</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Concierge Care</h4>
+          <ul>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="contact.html">WhatsApp Concierge</a></li>
+            <li><a href="contact.html#faq">Shipping & Returns</a></li>
+            <li><a href="contact.html">Track Your Order</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom-bar">
+        <div>© 2025 Velora Perfumes. All rights reserved.</div>
+        <div class="footer-luxury-tag">
+          HAUTE PARFUMERIE &nbsp;•&nbsp; GRASSE &nbsp;•&nbsp; WORLDWIDE
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- ==========================================================================
+       INTERACTIVE MODALS (PRODUCT DETAILS, CART, SEARCH)
+       ========================================================================== -->
+  <!-- Product Details Modal -->
+  <div class="modal-overlay" id="productModal" role="dialog" aria-modal="true" aria-labelledby="modalProductTitle">
+    <div class="modal-container">
+      <button class="modal-close-btn" onclick="closeProductModal()" aria-label="Close">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+
+      <div class="product-modal-grid">
+        <div class="modal-main-image-wrap" style="position:relative;">
+          <img loading="lazy" id="modalProductImage" src="assets/products/amber-bliss.jpg" alt="Perfume Bottle" />
+          <div class="flacon-engraving-overlay" id="modalEngravingOverlay">
+            <span class="engraved-text-preview" id="modalEngravingPreview">INITIALS</span>
+          </div>
+        </div>
+
+        <div>
+          <span style="font-size:0.75rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--gold-accent); font-weight:600;" id="modalProductTagline">EAU DE PARFUM</span>
+          <h2 class="modal-perfume-title" id="modalProductTitle">Amber Bliss</h2>
+          <div class="modal-perfume-price" id="modalProductPrice">GH₵ 1,250</div>
+          <p class="modal-perfume-desc" id="modalProductDesc"></p>
+
+          <div class="scent-pyramid-card">
+            <div class="pyramid-header">Fragrance Notes</div>
+            <div class="pyramid-level"><strong>TOP:</strong> <span id="modalTopNotes"></span></div>
+            <div class="pyramid-level"><strong>HEART:</strong> <span id="modalHeartNotes"></span></div>
+            <div class="pyramid-level"><strong>BASE:</strong> <span id="modalBaseNotes"></span></div>
+          </div>
+
+          <div class="size-selector-row">
+            <label class="size-label">Size:</label>
+            <div class="size-pills" id="modalSizePills"></div>
+          </div>
+
+          <!-- Complimentary Engraving Customizer -->
+          <div class="engraving-config-box">
+            <label class="engraving-checkbox-label">
+              <input type="checkbox" id="engravingCheckbox" onchange="toggleEngravingCustomizer()" />
+              <span>Add Complimentary Flacon Engraving (Free)</span>
+            </label>
+            <div class="engraving-fields-row" id="engravingFieldsRow">
+              <input type="text" id="engravingTextInput" class="engraving-input" placeholder="Initials or Name (Max 14)" maxlength="14" oninput="handleEngravingInput(event)" />
+              <div class="engraving-font-selectors">
+                <button type="button" class="engraving-font-btn active" onclick="selectEngravingFont('serif', this)">Roman Serif</button>
+                <button type="button" class="engraving-font-btn" onclick="selectEngravingFont('script', this)">Atelier Script</button>
+                <button type="button" class="engraving-font-btn" onclick="selectEngravingFont('minimal', this)">Minimal Sans</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="purchase-actions-row">
+            <div class="qty-counter">
+              <button class="qty-btn" onclick="adjustModalQty(-1)">−</button>
+              <input type="text" class="qty-input" id="modalQtyInput" value="1" readonly />
+              <button class="qty-btn" onclick="adjustModalQty(1)">+</button>
+            </div>
+            <button class="btn-modal-action btn-modal-cart" onclick="addModalProductToCart()">Add to Bag</button>
+            <button class="btn-modal-action btn-modal-buy" onclick="buyNowFromModal()">Order Now</button>
+          </div>
+
+          <!-- Social Share Row -->
+          <div class="modal-social-share-row">
+            <span class="share-label-tag">Share Flacon:</span>
+            <button type="button" class="share-pill-btn" onclick="shareCurrentProduct('whatsapp')" title="Share on WhatsApp">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86.174.086.275.072.376-.044.101-.116.433-.506.549-.68.116-.173.231-.144.39-.086s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.099.824z"/></svg>
+              <span>WhatsApp</span>
+            </button>
+            <button type="button" class="share-pill-btn" onclick="shareCurrentProduct('copy')" title="Copy Link">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+              <span>Copy Link</span>
+            </button>
+            <button type="button" class="share-pill-btn" onclick="shareCurrentProduct('native')" title="Share Dialog">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+              <span>Share</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Connoisseur Reviews & Olfactory Impressions -->
+      <div class="connoisseur-reviews-block" id="modalReviewsSection"></div>
+    </div>
+  </div>
+
+  <!-- Cart Drawer -->
+  <div class="cart-drawer-overlay" id="cartDrawerOverlay" onclick="closeCartDrawer()"></div>
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Shopping Bag">
+    <div class="cart-header">
+      <h3>Your Bag</h3>
+      <button class="modal-close-btn" style="position:static;" onclick="closeCartDrawer()">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+
+    <div class="free-shipping-progress" style="padding:0.75rem 1.5rem; background:rgba(197,152,88,0.08); border-bottom:1px solid rgba(197,152,88,0.2);">
+      <div id="shippingProgressText" style="font-size:0.78rem; color:var(--text-body); margin-bottom:0.4rem;">Add GH₵ 1,500 for Free Nationwide Delivery</div>
+      <div class="shipping-bar-track" style="height:4px; background:#e0dbd3; border-radius:2px; overflow:hidden;">
+        <div class="shipping-bar-fill" id="shippingBarFill" style="height:100%; width:0%; background:var(--gold-accent); transition:width 0.3s ease;"></div>
+      </div>
+    </div>
+
+    <div class="cart-items-body" id="cartItemsBody"></div>
+
+    <div class="cart-footer">
+      <div class="cart-subtotal-row">
+        <span>Subtotal</span>
+        <strong id="cartSubtotalAmount">GH₵ 0</strong>
+      </div>
+      <p style="font-size:0.75rem; color:var(--text-muted); margin-bottom:1rem;">* Doorstep delivery across Ghana. Cash on delivery & MoMo supported.</p>
+      <button class="btn-drawer-checkout" id="cartCheckoutBtn" onclick="openCheckoutModal()">Proceed to Order (No Prepayment Required)</button>
+    </div>
+  </aside>
+
+  <!-- Checkout Concierge Modal -->
+  <div class="modal-overlay" id="checkoutModal" role="dialog" aria-modal="true">
+    <div class="modal-container" style="max-width:560px; padding:2rem 2.5rem; max-height:90vh; overflow-y:auto;">
+      <button class="modal-close-btn" onclick="closeCheckoutModal()">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+      <h3 style="font-family:var(--font-serif); font-size:1.6rem; margin-bottom:0.4rem;">Order Delivery Confirmation</h3>
+      <p style="font-size:0.86rem; color:var(--text-muted); margin-bottom:1.5rem;">Our concierge will contact you via WhatsApp or call to confirm delivery.</p>
+
+      <!-- Order Summary -->
+      <div class="checkout-order-summary" style="margin-bottom:1.5rem; background:#f7f5f2; border:1px solid #ebe5dc; border-radius:4px; padding:1rem;">
+        <div style="font-size:0.75rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-muted); margin-bottom:0.6rem; font-weight:600;">Your Selection</div>
+        <div id="checkoutItemsMiniList" style="max-height:140px; overflow-y:auto; margin-bottom:0.75rem;"></div>
+        <div style="display:flex; justify-content:space-between; font-size:0.85rem; color:var(--text-body); margin-bottom:0.25rem;">
+          <span>Subtotal:</span><span id="checkoutSubtotal">GH₵ 0</span>
+        </div>
+        <div style="display:flex; justify-content:space-between; font-size:0.85rem; color:var(--text-body); margin-bottom:0.25rem;">
+          <span>Delivery Fee:</span><span id="checkoutDeliveryFee">FREE</span>
+        </div>
+        <div style="display:flex; justify-content:space-between; font-family:var(--font-display); font-size:1.15rem; font-weight:700; color:var(--text-title); border-top:1px solid var(--border-subtle); padding-top:0.4rem;">
+          <span>Total Payable on Delivery:</span><span id="checkoutGrandTotal">GH₵ 0</span>
+        </div>
+      </div>
+
+      <form onsubmit="submitOrderForm(event)">
+        <div style="margin-bottom:1rem;">
+          <label style="display:block; font-size:0.78rem; font-weight:600; text-transform:uppercase; margin-bottom:0.35rem;">Full Name *</label>
+          <input type="text" name="fullName" style="width:100%; padding:0.8rem; border:1px solid #ddd7cd; border-radius:4px;" placeholder="Your Full Name" required />
+        </div>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-bottom:1rem;">
+          <div>
+            <label style="display:block; font-size:0.78rem; font-weight:600; text-transform:uppercase; margin-bottom:0.35rem;">Phone Number *</label>
+            <input type="tel" name="phone" style="width:100%; padding:0.8rem; border:1px solid #ddd7cd; border-radius:4px;" placeholder="Phone Number" required />
+          </div>
+          <div>
+            <label style="display:block; font-size:0.78rem; font-weight:600; text-transform:uppercase; margin-bottom:0.35rem;">WhatsApp *</label>
+            <input type="tel" name="whatsapp" style="width:100%; padding:0.8rem; border:1px solid #ddd7cd; border-radius:4px;" placeholder="WhatsApp Number" required />
+          </div>
+        </div>
+        <div style="margin-bottom:1rem;">
+          <label style="display:block; font-size:0.78rem; font-weight:600; text-transform:uppercase; margin-bottom:0.35rem;">Delivery Address *</label>
+          <input type="text" name="address" style="width:100%; padding:0.8rem; border:1px solid #ddd7cd; border-radius:4px;" placeholder="Address / Location / Landmark" required />
+          <input type="hidden" name="region" value="Ghana" />
+        </div>
+
+        <!-- Luxury Gift Wrapping Option -->
+        <div class="gift-wrap-selector-box" style="margin-bottom:1rem; border:1px solid rgba(197,154,88,0.3); border-radius:4px; padding:0.85rem; background:rgba(197,154,88,0.06);">
+          <label class="gift-wrap-header-label" style="display:flex; align-items:center; gap:0.6rem; font-size:0.82rem; font-weight:600; cursor:pointer;">
+            <input type="checkbox" id="giftWrapCheckbox" name="giftWrap" onchange="toggleGiftWrapOption(this.checked)" />
+            <span>Complimentary Haute Gift Wrapping (Ribbon &amp; Velvet Box)</span>
+          </label>
+          <div class="gift-wrap-subtext" style="font-size:0.72rem; color:var(--text-muted); margin-left:1.6rem; margin-top:0.25rem;">Includes Velora black-and-gold satin bow, wax seal, and handwritten gift card.</div>
+          <div class="gift-message-textarea-wrap" id="giftMessageWrap" style="display:none; margin-top:0.6rem; padding-left:1.6rem;">
+            <textarea id="giftMessageInput" name="giftMessage" style="width:100%; padding:0.6rem; border:1px solid #ddd7cd; border-radius:4px; font-size:0.8rem; min-height:55px;" placeholder="Write your personalized gift message here..."></textarea>
+          </div>
+        </div>
+
+        <div style="margin-bottom:1.5rem;">
+          <label style="display:block; font-size:0.78rem; font-weight:600; text-transform:uppercase; margin-bottom:0.35rem;">Notes (Optional)</label>
+          <textarea name="notes" style="width:100%; padding:0.8rem; border:1px solid #ddd7cd; border-radius:4px; height:60px;" placeholder="Special instructions..."></textarea>
+        </div>
+        <button type="submit" class="btn-drawer-checkout" style="width:100%;">Submit Order</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Order Confirmation Modal -->
+  <div class="modal-overlay" id="confirmationModal" role="dialog" aria-modal="true">
+    <div class="modal-container" style="max-width:520px; padding:2.5rem 2rem; text-align:center; position:relative;">
+      <button class="modal-close-btn" onclick="closeConfirmationModal()" aria-label="Close">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+      <h3 style="font-family:var(--font-serif); font-size:1.8rem; margin-bottom:0.5rem;">Order Received</h3>
+      <div style="display:inline-block; padding:0.35rem 1.1rem; background:#f2efeb; border-radius:50px; font-weight:600; margin-bottom:1.25rem; color:var(--text-title);" id="confirmOrderRef">#VEL-123456</div>
+      <p style="font-size:0.92rem; color:var(--text-body); line-height:1.6; margin-bottom:1.5rem;">
+        Thank you, <strong id="confirmCustomerName">Customer</strong>! Your order has been placed.<br />
+        Our concierge will reach you at <strong id="confirmCustomerContact" style="color:var(--gold-accent);">024 555 0192</strong> to confirm delivery to <strong id="confirmDeliveryLocation">Location</strong>.<br /><br />
+        Total Payable on Delivery: <strong id="confirmTotalAmount" style="font-size:1.15rem; color:var(--gold-dark);">GH₵ 0</strong>
+      </p>
+      <div style="display:flex; gap:0.75rem; justify-content:center; flex-wrap:wrap;">
+        <a id="confirmWhatsAppBtn" href="#" target="_blank" rel="noopener" class="btn-drawer-checkout" style="display:inline-block; text-decoration:none; background:#25d366; color:#fff; padding:0.8rem 1.4rem;">Confirm on WhatsApp</a>
+        <button class="btn btn-outline" style="padding:0.8rem 1.4rem; border:1px solid var(--burgundy-rich); color:var(--burgundy-rich); background:transparent; cursor:pointer; border-radius:4px; font-weight:600;" onclick="closeConfirmationModal()">Continue Exploring</button>
+      </div>
+      <button class="btn btn-outline" style="padding:0.75rem 1.25rem; border:1px solid var(--gold-accent); color:var(--gold-dark); background:var(--champagne-soft); cursor:pointer; border-radius:4px; font-weight:600; width:100%; margin-top:0.75rem;" onclick="closeConfirmationModal(); openConciergePassModal();">
+        View VIP Concierge Pass & Certificate
+      </button>
+    </div>
+  </div>
+
+  <!-- Wishlist Drawer -->
+  <div class="cart-drawer-overlay" id="wishlistDrawerOverlay" onclick="closeWishlistDrawer()"></div>
+  <aside class="cart-drawer" id="wishlistDrawer" aria-label="Wishlist Drawer">
+    <div class="cart-header">
+      <h3>Saved Fragrances</h3>
+      <button class="modal-close-btn" style="position:static;" onclick="closeWishlistDrawer()">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+    </div>
+    <div class="cart-items-body" id="wishlistItemsBody"></div>
+  </aside>
+
+  <!-- Mobile Navigation Drawer -->
+  <div class="mobile-nav-overlay" id="mobileNavOverlay" onclick="closeMobileNav()"></div>
+  <aside class="mobile-nav-drawer" id="mobileNavDrawer" aria-label="Mobile Navigation">
+    <div class="mobile-nav-header">
+      <div class="velora-brand">
+        <span class="velora-logo-title" style="font-size:1.15rem;">VELORA</span>
+        <span class="velora-logo-sub" style="font-size:0.6rem;">PERFUMES</span>
+      </div>
+      <button class="modal-close-btn" style="position:static;" onclick="closeMobileNav()">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+    </div>
+    <ul class="mobile-nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="shop.html">Shop</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="collections.html">Collections</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li style="border-top:1px solid rgba(255,255,255,0.08); padding-top:0.5rem;"><a href="javascript:void(0)" onclick="closeMobileNav(); openPriveDrawer();" style="color:var(--gold-accent); font-weight:600;">Maison Privé (VIP & Past Orders)</a></li>
+      <li><a href="javascript:void(0)" onclick="closeMobileNav(); openConciergePassModal();" style="color:var(--gold-light);">VIP Concierge Pass</a></li>
+      <li><a href="javascript:void(0)" onclick="closeMobileNav(); openScentQuiz();" style="color:var(--gold-light);">Scent Finder Quiz</a></li>
+      <li><a href="javascript:void(0)" onclick="closeMobileNav(); openOrderTrackerModal();" style="color:var(--gold-light);">Track My Delivery</a></li>
+      <li><a href="javascript:void(0)" onclick="closeMobileNav(); openLayeringLab();" style="color:var(--gold-light);">Scent Layering Lab</a></li>
+      <li><a href="javascript:void(0)" onclick="closeMobileNav(); openDiscoverySetModal();" style="color:var(--gold-light);">Discovery Coffret</a></li>
+    </ul>
+    <div class="mobile-nav-footer">
+      <p style="margin-bottom:0.5rem; color:var(--gold-accent); font-weight:600;">HAUTE PARFUMERIE · ACCRA</p>
+      <a href="https://wa.me/233245550192" target="_blank" rel="noopener" style="color:#ffffff; text-decoration:none; font-size:0.85rem;">
+        WhatsApp Concierge: +233 24 555 0192
+      </a>
+    </div>
+  </aside>
+
+  <!-- Live Search Modal -->
+  <div class="modal-overlay" id="searchModal" role="dialog" aria-modal="true">
+    <div class="modal-container" style="max-width:640px; padding:2rem 2.5rem;">
+      <button class="modal-close-btn" onclick="closeSearchModal()">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+      <h3 style="font-family:var(--font-serif); font-size:1.6rem; margin-bottom:1rem;">Search Fragrances</h3>
+      <input type="text" id="searchModalInput" style="width:100%; padding:0.9rem 1.25rem; border:1px solid #ddd7cd; border-radius:4px; font-size:1rem;" placeholder="Search Amber Bliss, Midnight Oud..." oninput="handleLiveSearch(event)" />
+      <div id="searchResultsList" style="margin-top:1rem; max-height:350px; overflow-y:auto;"></div>
+    </div>
+  </div>
+
+  <!-- Signature Scent Finder Quiz Modal -->
+  <div class="modal-overlay" id="scentQuizModal" role="dialog" aria-modal="true">
+    <div class="modal-container quiz-container">
+      <button class="modal-close-btn" onclick="closeScentQuiz()" style="color:#cfcac0;">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+      <div class="quiz-steps-tracker">
+        <div class="quiz-step-bar active" id="quizBarStep1"></div>
+        <div class="quiz-step-bar" id="quizBarStep2"></div>
+        <div class="quiz-step-bar" id="quizBarStep3"></div>
+      </div>
+      <div id="quizStepContainer"></div>
+    </div>
+  </div>
+
+  <!-- Live Order Tracker Modal -->
+  <div class="modal-overlay" id="orderTrackerModal" role="dialog" aria-modal="true">
+    <div class="modal-container tracker-container" style="position:relative;">
+      <button class="modal-close-btn" onclick="closeOrderTrackerModal()">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+      <h3 style="font-family:var(--font-serif); font-size:1.75rem; margin-bottom:0.25rem;">Live Order Tracking</h3>
+      <p style="font-size:0.86rem; color:var(--text-muted);">Real-time status of your hand-poured flacon from our Accra atelier.</p>
+      
+      <div class="tracker-search-box">
+        <input type="text" id="trackerOrderInput" class="tracker-search-input" placeholder="VEL-XXXXXX" onkeyup="if(event.key==='Enter') trackOrderLookup()" />
+        <button class="btn btn-primary" onclick="trackOrderLookup()">Track</button>
+      </div>
+
+      <div id="trackerResultsArea"></div>
+    </div>
+  </div>
+
+  <!-- Scent Layering Lab Modal -->
+  <div class="modal-overlay" id="layeringLabModal" role="dialog" aria-modal="true">
+    <div class="modal-container layering-lab-container" style="position:relative;">
+      <button class="modal-close-btn" onclick="closeLayeringLab()" style="color:#cfcac0;">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+      <div style="text-align:center; margin-bottom:1.25rem;">
+        <span style="font-size:0.75rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--gold-accent); font-weight:600;">HAUTE PARFUMERIE ATELIER</span>
+        <h3 style="font-family:var(--font-serif); font-size:1.75rem; color:#fff; margin-top:0.2rem;">The Scent Layering Lab</h3>
+        <p style="font-size:0.85rem; color:#aba69e;">Simulate blending two bespoke flacons and receive a 10% Maison Duo Privilege.</p>
+      </div>
+
+      <div class="layering-pickers-row">
+        <div>
+          <label style="display:block; font-size:0.75rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--gold-light); margin-bottom:0.4rem; font-weight:600;">Base Sillage Flacon</label>
+          <select id="layeringBaseSelect" class="layering-select" onchange="updateLayeringSimulation()"></select>
+        </div>
+        <div>
+          <label style="display:block; font-size:0.75rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--gold-light); margin-bottom:0.4rem; font-weight:600;">Accent Aura Flacon</label>
+          <select id="layeringAccentSelect" class="layering-select" onchange="updateLayeringSimulation()"></select>
+        </div>
+      </div>
+
+      <div class="layering-slider-box">
+        <div style="display:flex; justify-content:space-between; font-size:0.8rem; color:#cfcac0;">
+          <span>Blend Ratio</span>
+          <span id="layeringRatioText" style="color:var(--gold-accent); font-weight:600;">60% Base · 40% Accent</span>
+        </div>
+        <input type="range" id="layeringRatioSlider" class="layering-slider" min="20" max="80" value="60" oninput="updateLayeringSimulation()" />
+      </div>
+
+      <div id="layeringResultCard" class="layering-result-card"></div>
+    </div>
+  </div>
+
+  <!-- Bespoke Discovery Set Builder Modal -->
+  <div class="modal-overlay" id="discoverySetModal" role="dialog" aria-modal="true">
+    <div class="modal-container discovery-container" style="position:relative;">
+      <button class="modal-close-btn" onclick="closeDiscoverySetModal()" style="color:#cfcac0;">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+      <div style="text-align:center; margin-bottom:1rem;">
+        <span style="font-size:0.75rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--gold-accent); font-weight:600;">BESPOKE CURATION</span>
+        <h3 style="font-family:var(--font-serif); font-size:1.75rem; color:#fff; margin-top:0.2rem;">The Discovery Coffret</h3>
+        <p style="font-size:0.85rem; color:#cfcac0;">Select any 3 miniature extraits (10ml each) presented in our magnetic velvet casket.</p>
+        <div style="font-family:var(--font-display); font-size:1.15rem; font-weight:700; color:var(--gold-light); margin-top:0.3rem;">Privilege Price: GH₵ 480</div>
+      </div>
+
+      <div class="discovery-box-preview" id="discoveryBoxPreview"></div>
+
+      <div style="font-size:0.75rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--gold-accent); font-weight:600; margin-bottom:0.4rem;">Choose From Atelier Catalog:</div>
+      <div class="discovery-picker-grid" id="discoveryPickerGrid"></div>
+
+      <div style="text-align:center;">
+        <button class="btn btn-primary" id="discoveryAddBtn" style="width:100%;" onclick="addDiscoverySetToCart()" disabled>Select 3 Flacons to Complete Coffret</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Maison Velora Privé VIP Client Drawer -->
+  <div class="prive-drawer-overlay" id="priveDrawerOverlay" onclick="closePriveDrawer()"></div>
+  <aside class="prive-drawer" id="priveDrawer" aria-label="Maison Velora Privé VIP Ledger">
+    <div class="prive-drawer-header">
+      <div class="prive-header-brand">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="color:var(--gold-accent);">
+          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+          <circle cx="12" cy="7" r="4"></circle>
+        </svg>
+        <div>
+          <h3 class="prive-header-title">Maison Privé</h3>
+          <div class="prive-header-sub">VIP Client Ledger & Tiers</div>
+        </div>
+      </div>
+      <button class="modal-close-btn" style="position:static; background:rgba(255,255,255,0.08); border-color:rgba(255,255,255,0.15); color:#fff;" onclick="closePriveDrawer()" aria-label="Close Privé">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+    </div>
+
+    <div class="prive-drawer-body">
+      <!-- VIP Member Tier Card -->
+      <div class="prive-tier-card" id="priveTierCard">
+        <div class="prive-tier-badge-row">
+          <span class="prive-tier-badge" id="priveTierBadge">Atelier Guest</span>
+          <span class="prive-spend-badge" id="priveSpendBadge">Lifetime: GH₵ 0</span>
+        </div>
+        <div class="prive-tier-name" id="priveTierName">Atelier Guest</div>
+        <p class="prive-tier-desc" id="priveTierDesc">Welcome to Maison Velora. Place your first concierge order to unlock complimentary bottle engraving and priority atelier dispatch.</p>
+        
+        <div class="prive-progress-wrap">
+          <div class="prive-progress-meta">
+            <span id="priveProgressLabel">Next: Velora Connoisseur</span>
+            <span id="priveProgressCount">0 / 1 Orders</span>
+          </div>
+          <div class="prive-progress-track">
+            <div class="prive-progress-fill" id="priveProgressFill" style="width: 0%;"></div>
+          </div>
+        </div>
+
+        <div class="prive-perks-list">
+          <div class="prive-perk-item">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>Doorstep Concierge</span>
+          </div>
+          <div class="prive-perk-item">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>Pay on Delivery</span>
+          </div>
+          <div class="prive-perk-item">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>Free Bottle Engraving</span>
+          </div>
+          <div class="prive-perk-item">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>Private Reserve Access</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Orders Ledger Section -->
+      <div>
+        <div class="prive-section-title">
+          <span>Concierge Order History</span>
+          <span style="font-size:0.7rem; color:#8c8880;" id="priveOrderCountBadge">0 Orders</span>
+        </div>
+              <!-- Connoisseur Loyalty Points & Exclusive Rewards Hub -->
+      <div class="rewards-hub-card" id="priveRewardsHub">
+        <div class="rewards-points-banner">
+          <div>
+            <div class="rewards-points-count" id="rewardsPointsDisplay">250 pts</div>
+            <div class="rewards-points-label">Connoisseur Privilege Balance</div>
+          </div>
+          <button type="button" class="btn btn-primary" style="font-size:0.7rem; padding:0.45rem 0.85rem; letter-spacing:0.08em;" onclick="earnBonusPoints(50)">+ Daily Visit</button>
+        </div>
+        <div style="font-size:0.75rem; color:var(--gold-accent); font-weight:600; margin-bottom:0.6rem; text-transform:uppercase; letter-spacing:0.08em;">
+          Special Offers &amp; Atelier Privileges
+        </div>
+        <div id="priveReferralBox"></div>`r`n        <div class="rewards-offers-grid" id="rewardsOffersContainer">
+          <!-- Dynamically injected reward offers -->
+        </div>
+      </div>
+        <div id="priveOrdersList"></div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Printable Luxury Concierge Pass & Certificate Modal -->
+  <div class="modal-overlay" id="conciergePassModal" role="dialog" aria-modal="true">
+    <div class="modal-container concierge-pass-container">
+      <button class="modal-close-btn" onclick="closeConciergePassModal()" aria-label="Close Pass">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+
+      <div class="concierge-pass-paper" id="conciergePassPaper">
+        <!-- SVG Watermark Seal -->
+        <svg class="concierge-pass-seal-watermark" viewBox="0 0 100 100" fill="none" stroke="currentColor">
+          <circle cx="50" cy="50" r="46" stroke-width="1.5" stroke-dasharray="3 3"></circle>
+          <circle cx="50" cy="50" r="40" stroke-width="1"></circle>
+          <path d="M50 16 L56 36 L76 36 L60 48 L66 68 L50 56 L34 68 L40 48 L24 36 L44 36 Z" stroke-width="1"></path>
+        </svg>
+
+        <div class="concierge-pass-header">
+          <div class="concierge-pass-crest">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"></path>
+            </svg>
+          </div>
+          <div class="concierge-pass-motto">Maison Velora · Haute Parfumerie · Accra</div>
+          <h2 class="concierge-pass-title">VIP Concierge Flacon Pass</h2>
+          <div class="concierge-pass-sub">Official Certificate of Atelier Authenticity & Priority Courier Dispatch</div>
+        </div>
+
+        <div class="concierge-pass-meta-grid">
+          <div>
+            <div class="concierge-meta-label">Pass / Order Reference</div>
+            <div class="concierge-meta-value" id="passOrderRef">#VEL-892410</div>
+          </div>
+          <div>
+            <div class="concierge-meta-label">Atelier Dispatch Date</div>
+            <div class="concierge-meta-value" id="passOrderDate">07 Nov 2026</div>
+          </div>
+          <div>
+            <div class="concierge-meta-label">Recipient / Connoisseur</div>
+            <div class="concierge-meta-value" id="passCustomerName">Kwame Mensah</div>
+          </div>
+          <div>
+            <div class="concierge-meta-label">Delivery Destination</div>
+            <div class="concierge-meta-value" id="passDeliveryLocation">East Legon, Greater Accra</div>
+          </div>
+        </div>
+
+        <div class="concierge-pass-manifest">
+          <div class="concierge-pass-manifest-title">Atelier Flacon Manifest (Hand-Inspected)</div>
+          <table class="concierge-manifest-table">
+            <thead>
+              <tr>
+                <th>Fragrance / Edition</th>
+                <th>Volume</th>
+                <th>Artisan Engraving</th>
+                <th style="text-align:right;">Atelier Value</th>
+              </tr>
+            </thead>
+            <tbody id="passManifestItems">
+              <!-- Dynamically populated -->
+            </tbody>
+          </table>
+        </div>
+
+        <div class="concierge-pass-footer">
+          <div class="concierge-pass-signature">
+            <div class="concierge-signature-line">Maison Velora Maître Parfumeur</div>
+            <div style="font-size:0.7rem; color:#8c8880; letter-spacing:0.08em; text-transform:uppercase;">Grasse Trained · Accra Atelier Inspection Seal</div>
+          </div>
+          <div class="concierge-pass-barcode">
+            <div id="passVerificationCode">VEL-AUTH-892410-ACCRA</div>
+            <div style="font-size:0.65rem; color:#b5b0a6; margin-top:2px;">CASH / MOMO ON ARRIVAL</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="concierge-pass-actions">
+        <button class="btn btn-primary" onclick="printConciergePass()">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right:6px;"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+          Print VIP Pass (or Save PDF)
+        </button>
+        <button class="btn btn-outline" onclick="verifyConciergePassWhatsApp()">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right:6px; color:#25d366;"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+          Verify with Concierge
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Floating VIP Concierge Pill & Actions Panel -->
+  <aside class="velora-concierge-panel" id="veloraConciergePanel" aria-label="Concierge Menu">
+    <div class="concierge-panel-header">
+      <div>
+        
+        
+      </div>
+      <button class="concierge-panel-close" onclick="closeConciergePanel()" aria-label="Close Concierge">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+    </div>
+    <div class="concierge-panel-body">
+      <button class="concierge-menu-btn" onclick="openPriveDrawer()">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+        <span>Maison Privé (VIP & Past Orders)</span>
+      </button>
+      <button class="concierge-menu-btn" onclick="openConciergePassModal()">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+        <span>VIP Concierge Pass & Certificate</span>
+      </button>
+      <button class="concierge-menu-btn btn-wa" onclick="openConciergeWhatsApp()">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+        <span>WhatsApp Concierge (+233 24 555 0192)</span>
+      </button>
+      <button class="concierge-menu-btn" onclick="openOrderTrackerModal()">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+        <span>Track My Delivery (#VEL)</span>
+      </button>
+      <button class="concierge-menu-btn" onclick="openScentQuiz()">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+        <span>Signature Scent Finder Quiz</span>
+      </button>
+      <button class="concierge-menu-btn" onclick="openLayeringLab()">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path></svg>
+        <span>Scent Layering Lab (10% Off Duo)</span>
+      </button>
+      <button class="concierge-menu-btn" onclick="openDiscoverySetModal()">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>
+        <span>Bespoke Discovery Coffret (GH₵ 480)</span>
+      </button>
+      <a href="tel:+233245550192" class="concierge-menu-btn" style="text-decoration:none;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+        <span>Direct Phone Call (+233 24 555 0192)</span>
+      </a>
+    </div>
+    <div class="concierge-panel-footer">
+      East Legon Atelier, Accra · Pay Upon Delivery (Cash & MoMo)
+    </div>
+  </aside>
+
+  <!-- Floating Perfume Comparison Dock -->
+  <div class="velora-compare-dock" id="veloraCompareDock" aria-label="Perfume Comparison Bar">
+    <div style="font-family:var(--font-display); font-size:0.75rem; letter-spacing:0.1em; color:var(--gold-accent); text-transform:uppercase; font-weight:700;">
+      Compare (<span id="compareDockCount">0</span>/4)
+    </div>
+    <div class="compare-dock-slots" id="compareDockSlots"></div>
+    <button type="button" class="compare-dock-btn" onclick="openCompareModal()">Compare Now</button>
+    <button type="button" class="compare-dock-clear" onclick="clearComparison()">Clear</button>
+  </div>
+
+  <!-- Perfume Comparison Matrix Modal -->
+  <div class="compare-modal-overlay" id="compareModalOverlay" role="dialog" aria-modal="true" aria-labelledby="compareModalTitle">
+    <div class="compare-modal-box">
+      <div style="display:flex; align-items:center; justify-content:space-between; border-bottom:1px solid rgba(255,255,255,0.1); padding-bottom:1rem;">
+        <div>
+          <span style="font-size:0.75rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--gold-accent); font-weight:600;">CONNOISSEUR BENCHMARK</span>
+          <h2 id="compareModalTitle" style="font-family:var(--font-serif); font-size:1.6rem; color:#fff; margin:0.2rem 0 0 0;">Perfume Comparison Matrix</h2>
+        </div>
+        <button class="modal-close-btn" style="position:static; background:rgba(255,255,255,0.06); border-color:rgba(255,255,255,0.15); color:#fff;" onclick="closeCompareModal()" aria-label="Close Comparison">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+      </div>
+      <div id="compareMatrixContainer" style="overflow-x:auto;"></div>
+    </div>
+  </div>
+
+  <div class="toast-container" id="toastContainer" aria-live="polite"></div>
+
+  <script src="app.js"></script>
+  <script src="clerk-auth.js"></script>
+</body>
+</html>

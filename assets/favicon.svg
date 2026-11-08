@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f5e2b8"/>
+      <stop offset="45%" stop-color="#c59858"/>
+      <stop offset="100%" stop-color="#9a7138"/>
+    </linearGradient>
+    <radialGradient id="bgGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#18181c"/>
+      <stop offset="100%" stop-color="#08080a"/>
+    </radialGradient>
+  </defs>
+  <!-- Background Disc -->
+  <rect width="64" height="64" rx="14" fill="url(#bgGrad)"/>
+  <rect width="60" height="60" x="2" y="2" rx="12" fill="none" stroke="url(#goldGrad)" stroke-width="1.2" stroke-opacity="0.5"/>
+  
+  <!-- Subtle Perfume Flacon Silhouette Behind V -->
+  <path d="M26 14 h12 v4 h-12 z" fill="url(#goldGrad)" opacity="0.6"/>
+  <path d="M29 10 h6 v4 h-6 z" fill="url(#goldGrad)" opacity="0.8"/>
+  
+  <!-- Monogram V Letterform -->
+  <path d="M19 22 L29.5 48 Q32 52 34.5 48 L45 22 Q45.5 20.5 43.5 20.5 Q42 20.5 41 22.5 L32 44.5 L23 22.5 Q22 20.5 20.5 20.5 Q18.5 20.5 19 22 Z" fill="url(#goldGrad)"/>
+  
+  <!-- Diamond Crown Accent -->
+  <polygon points="32,16 34.5,19.5 32,23 29.5,19.5" fill="url(#goldGrad)"/>
+</svg>
+

@@ -1,0 +1,9 @@
+# Cline / Kilo Code Rules for Velora Perfumes
+
+Read `AGENTS.md` and `TASK_BOARD.md` upon session start.
+
+- Stack: HTML5 + Vanilla CSS (`styles.css`) + Vanilla JavaScript (`app.js`).
+- Currency: GH₵ (Ghana Cedis).
+- Ordering: WhatsApp concierge delivery flow (`VEL-XXXXXX`).
+- Cross-agent collaboration: Work in tandem with Antigravity. Check `TASK_BOARD.md` before making changes.
+- Safe DOM handling: Always null-check DOM elements (`if (el) ...`).
